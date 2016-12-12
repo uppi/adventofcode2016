@@ -18,3 +18,8 @@ class Test2(unittest.TestCase):
         parsed = adv.parse_input("ULL\nRRDDD\nLURDL\nUUUUD")
         code = adv.calculate_code(parsed)
         self.assertEqual("1985", code)
+
+    def test_calculate_actual_code(self):
+        parsed = adv.parse_input("ULL\nRRDDD\nLURDL\nUUUUD")
+        code = adv.calculate_actual_code(parsed)
+        self.assertEqual("5DB3", code)

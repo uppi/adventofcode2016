@@ -36,6 +36,29 @@ def calculate_code(input_seq):
     return "".join(result)
 
 
+def calculate_actual_code(input_seq):
+    actual_keyboard = [
+        [None, None, "1", None, None],
+        [None, "2", "3", "4", None],
+        ["5", "6", "7", "8", "9"],
+        [None, "A", "B", "C", None],
+        [None, None, "D", None, None]
+    ]
+    cx, cy = 0, 2
+    result = []
+
+    for cmd in input_seq:
+        for x, y in cmd:
+            _cx = max(0, min(4, cx + x))
+            _cy = max(0, min(4, cy + y))
+            if actual_keyboard[_cy][_cx] is not None:
+                cx, cy = _cx, _cy
+        result.append(actual_keyboard[cy][cx])
+
+    return "".join(result)
+
+
 if __name__ == '__main__':
     parsed_input = parse_input(INPUT)
     print(calculate_code(parsed_input))
+    print(calculate_actual_code(parsed_input))
