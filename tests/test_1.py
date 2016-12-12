@@ -14,3 +14,8 @@ class Test1(unittest.TestCase):
     def test_distance(self):
         distance = adv.calculate_distance([(-1, 1), (1, 1), (-1, 3), (-1, 3)])
         self.assertEqual(6, distance)
+
+    def test_distance_of_first_cross(self):
+        distance = adv.calculate_distance_of_first_cross(
+            [(1, 8), (1, 4), (1, 4), (1, 8)])
+        self.assertEqual(4, distance)
