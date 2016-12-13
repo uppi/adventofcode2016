@@ -1,4 +1,7 @@
-import queue
+try:
+    import queue
+except:
+    import Queue as queue
 
 
 def can_be_passed(x, y, salt):
