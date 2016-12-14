@@ -1,6 +1,9 @@
 import re
 import collections
-import queue
+try:
+    import queue
+except ImportError:
+    import Queue as queue
 
 PARSER_GENERATOR = re.compile(" (\w+) generator")
 PARSER_MICROCHIP = re.compile(" (\w+)-compatible microchip")
