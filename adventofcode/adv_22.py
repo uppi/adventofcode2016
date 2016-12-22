@@ -86,6 +86,10 @@ def solve2(inp):
         print(" ".join("{}/{}{}".format(
             u, a, "*" if t != 0 else "") for (u, a, t) in line))
 
+    for line in node_mat:
+        print("".join("{}".format(
+            'G' if t!= 0 else '_' if u == 0 else '.' if u + a < 100 else '#') for (u, a, t) in line))
+
     q = queue.Queue()
     state = tuple(tuple(l) for l in node_mat)
     q.put((state, 0))
